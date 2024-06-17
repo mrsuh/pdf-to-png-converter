@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <title>PDF to PNG converter</title>
+</head>
+<body>
+
+<div class="container-fluid mt-3">
+    <h1 class="text-center">PDF to PNG converter</h1>
+    <div class="row text-center mb-3">
+        <div class="col">
+            <button id="open-file-button" class="btn btn-success">
+                <div id="open-file-button-title-open">Choose PDF file</div>
+                <div id="open-file-button-title-converting" class="d-none">
+                    Converting...
+                    <div class="spinner-border spinner-border-sm" role="status">
+                        <span class="sr-only"></span>
+                    </div>
+                </div>
+            </button>
+        </div>
+    </div>
+    <div class="row d-none" id="opened-file-container">
+        <div class="col">
+            <b>File:</b> <span id="opened-file"></span>
+        </div>
+    </div>
+    <div class="row d-none" id="converted-files-container">
+        <div class="col">
+            <b>Converted files:</b>
+            <ul id="converted-files"></ul>
+        </div>
+    </div>
+    <div class="row d-none text-center text-danger" id="log-container">
+        <h3>ERROR</h3>
+        <div class="col">
+            <div id="log"></div>
+        </div>
+    </div>
+</div>
+<script src="./renderer.js"></script>
+</body>
+</html>
